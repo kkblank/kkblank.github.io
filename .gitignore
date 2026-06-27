@@ -1,0 +1,35 @@
+# ==================== 依赖与构建产物 ====================
+node_modules/
+dist/
+build/
+out/
+.nuxt/
+.next/
+.svelte-kit/
+public/build/
+
+# ==================== 编辑器与IDE ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ==================== 系统与环境 ====================
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==================== 测试与覆盖率 ====================
+coverage/
+.nyc_output/
+
+# ==================== GitHub Pages 特殊说明 ====================
+# ⚠️ 注意：CNAME 文件【不要】忽略，否则自定义域名会失效！
+# ⚠️ 注意：404.html 【不要】忽略，否则SPA路由刷新会404！
