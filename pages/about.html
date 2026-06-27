@@ -16,28 +16,129 @@
     <h1 class="section-title"><i class="fa-solid fa-user"></i> 关于我</h1>
 
     <div class="card">
-      <p>一名热爱技术的开发者，关注前端、Python 与开源生态。持续学习，乐于分享。</p>
+      <p>热爱技术与创新的算法工程师，专注计算机视觉与 AI 工程落地。持续学习，乐于分享。</p>
     </div>
 
     <section class="about-section card">
-      <h3><i class="fa-solid fa-briefcase"></i> 工作经历</h3>
-      <p>待补充</p>
-    </section>
-
-    <section class="about-section card">
       <h3><i class="fa-solid fa-graduation-cap"></i> 教育背景</h3>
-      <p>待补充</p>
+      <ul style="list-style:none; padding:0;">
+        <li style="display:flex; justify-content:space-between; padding:0.3rem 0;">
+          <span><strong>淮安大学</strong> &middot; 硕士</span>
+          <span style="color:var(--text-muted);">2021.09 - 2024.06</span>
+        </li>
+        <li style="display:flex; justify-content:space-between; padding:0.3rem 0;">
+          <span><strong>广东工业大学</strong> &middot; 本科</span>
+          <span style="color:var(--text-muted);">2014.09 - 2018.06</span>
+        </li>
+      </ul>
     </section>
 
     <section class="about-section card">
-      <h3><i class="fa-solid fa-code"></i> 技术栈</h3>
-      <div class="tags">
-        <span class="tag">HTML5</span>
-        <span class="tag">CSS3</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Python</span>
-        <span class="tag">Git</span>
+      <h3><i class="fa-solid fa-briefcase"></i> 工作经历</h3>
+
+      <div style="margin-bottom:1.5rem;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem;">
+          <strong>某AI科技互联网公司</strong>
+          <span style="color:var(--text-muted); font-size:0.9rem;">2024.01 - 至今</span>
+        </div>
+        <p style="font-weight:500; color:var(--primary); margin-bottom:0.5rem;">算法工程师</p>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-weight:500;">基于正样本算法的地面异物识别项目</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">使用全景分割快速定位关注目标区域，结合基于 EMA 的时序特征衰减技术过滤光影误报，通过传统形态学与垂直领域微调多模态大模型结合的正样本差异对比算法，实现复杂场景下仅上报关注物体的变化区域。</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">成果：在南京电科院验收测试中有效精度 91.3%，有效召回 93.7%。成功将算法迁移适配到华为推理卡 Atlas-P310，推广至江苏下属多个地市部署使用。公开一篇发明专利（第一作者）。</p>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-weight:500;">无人机巡检缺陷识别项目</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">使用基于 mmdet、grounding-dino 等框架对目标进行两阶段检测，一阶段检测大目标缺陷类型及定位小目标缺陷载体，二阶段检测小目标具体缺陷类型。</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">成果：负责小金具与接地装置缺陷类型检测，使用 cascade-rcnn 基础模型架构结合 swint 骨干网络，训练多预测头检测模型，在缺陷测试集上达成精度召回均大于 75% 的识别性能。公开一篇发明专利（第一作者）。</p>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-weight:500;">RAG 增强知识检索</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">部署 chat、rerank、embedding 模型，基于 RAGflow 工作流调优模型参数，增强知识库向量解析与搜索，搭建前后端服务，实现企业专业知识引用问答，大模型自动根据分析建议调用算法分析接口并生成建议报告。</p>
+        </div>
+
+        <div style="margin-bottom:1rem;">
+          <p style="font-weight:500;">玻璃瓶工业质检项目</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">使用 yolo、opencv、resnet18 正样本算法等手段对玻瓶的各个部分进行定位检测和测量，实现使用少量训练样本检出大部分常规/非常规缺陷。</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">成果：主导项目开发，负责数据收集、标注，深度学习模型训练优化迭代，传统图像算法设计开发。验收成绩为平均缺陷检出率 99.5%，缺陷误检率小于 2%。</p>
+        </div>
       </div>
+
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem;">
+          <strong>浙江大华（深圳）</strong>
+          <span style="color:var(--text-muted); font-size:0.9rem;">2018.07 - 2019.05</span>
+        </div>
+        <p style="font-weight:500; color:var(--primary); margin-bottom:0.5rem;">售前技术支持工程师</p>
+        <p style="color:var(--text-light); font-size:0.9rem;">参与设计富士康等大型企业园区智能化设备定制需求对接，涉及自动报警主机、人脸识别监控、面容 RFID 身份通行门禁、智能解码投屏服务器等。参与主导比亚迪汽车连锁门店摄像机选型，枪球特殊功能程序需求定制，云平台部署调试。获得公司最佳优秀新员工荣誉奖提名。</p>
+      </div>
+    </section>
+
+    <section class="about-section card">
+      <h3><i class="fa-solid fa-flask"></i> 个人项目</h3>
+
+      <div style="margin-bottom:1rem;">
+        <p style="font-weight:500;">自动化工具箱</p>
+        <p style="color:var(--text-light); font-size:0.9rem;">使用 pyautogui、opencv、pillow 等实现自动化操作及图像处理，pyqt5 编写图形界面，多线程优化流畅度。目前拥有多家单位及个人用户。</p>
+        <p style="font-size:0.9rem;"><a href="https://github.com/kkblank/Automation-Toolbox.git" target="_blank">github.com/kkblank/Automation-Toolbox</a></p>
+      </div>
+
+      <div style="margin-bottom:1rem;">
+        <p style="font-weight:500;">Minitoolkit 快速开发库</p>
+        <p style="color:var(--text-light); font-size:0.9rem;">集成封装常用统计、文件操作、多线程日志打印等第三方开源代码，加快项目脚手架开发速度。</p>
+        <p style="font-size:0.9rem;">
+          <a href="https://github.com/kkblank/MiniToolkit.git" target="_blank">github.com/kkblank/MiniToolkit</a>
+          &nbsp;|&nbsp; <code>pip install Minitoolkit</code>
+        </p>
+      </div>
+
+      <div>
+        <p style="font-weight:500;">Llama.cpp-gui</p>
+        <p style="color:var(--text-light); font-size:0.9rem;">基于 llama.cpp 后端的轻量化 GUI 操作界面，使用 PySide6 编写操作界面，提供常见运行参数和脚本选择功能，提供基于 ModelScope 的模型搜索下载功能，支持检测 llamacpp 与 GUI 软件更新功能。</p>
+        <p style="font-size:0.9rem;"><a href="https://github.com/kkblank/Llamacpp-gui" target="_blank">github.com/kkblank/Llamacpp-gui</a></p>
+      </div>
+    </section>
+
+    <section class="about-section card">
+      <h3><i class="fa-solid fa-file-patent"></i> 学术成果</h3>
+      <ul style="color:var(--text-light); font-size:0.9rem; padding-left:1.2rem;">
+        <li style="margin-bottom:0.3rem;">《基于 matlab 的差异化文本键入方法》— 发明专利 — 已授权（第一作者）</li>
+        <li style="margin-bottom:0.3rem;">《基于动态自注意力机制的多智能体事件触发控制方法》— 发明专利 — 已公开（第一作者）</li>
+        <li style="margin-bottom:0.3rem;">《一种基于 EMA 输电线通道正样本特征挖掘对比方法及装置》— 发明专利 — 已公开（第一作者）</li>
+        <li style="margin-bottom:0.3rem;">《一种基于深度强化学的无人机开放场景巡检避障方法》— 发明专利 — 已公开（第一作者）</li>
+      </ul>
+    </section>
+
+    <section class="about-section card">
+      <h3><i class="fa-solid fa-code"></i> 专业技能</h3>
+      <div class="tags" style="justify-content:flex-start;">
+        <span class="tag">Python</span>
+        <span class="tag">PyTorch</span>
+        <span class="tag">YOLO</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">PaddleOCR</span>
+        <span class="tag">MMDetection</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Linux</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PyQt5</span>
+        <span class="tag">Numpy/Pandas</span>
+        <span class="tag">多模态大模型</span>
+        <span class="tag">华为 Atlas 推理卡</span>
+      </div>
+    </section>
+
+    <section class="about-section card">
+      <h3><i class="fa-solid fa-trophy"></i> 获奖情况</h3>
+      <ul style="color:var(--text-light); font-size:0.9rem; padding-left:1.2rem;">
+        <li>2023 年 数学建模一等奖</li>
+        <li>2023 年 研究生奖学金二等奖</li>
+        <li>2024 年 研究生奖学金一等奖</li>
+      </ul>
     </section>
   </main>
 
