@@ -1,7 +1,6 @@
 var NAV_ITEMS = [
   { label: '首页',     path: '/index.html' },
   { label: '关于我',   path: '/pages/about.html' },
-  { label: '文章',     path: '/pages/articles.html' },
   { label: '技术笔记', path: '/pages/notes.html' },
   { label: '联系',     path: '/pages/contact.html' }
 ]
