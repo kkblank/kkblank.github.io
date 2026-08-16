@@ -255,7 +255,7 @@ a:hover {
   margin-top: 3rem;
 }
 
-/* ========== Dark Theme ========== */
+/* ========== 深色主题 ========== */
 [data-theme="dark"] {
   --primary: #6d8bf7;
   --primary-dark: #5673e7;
@@ -268,6 +268,7 @@ a:hover {
   --shadow-hover: 0 4px 20px rgba(0,0,0,0.4);
 }
 
+/* 深色模式下链接颜色调整 */
 [data-theme="dark"] a {
   color: #8ab9ff;
 }
@@ -276,6 +277,7 @@ a:hover {
   color: #a8c6ff;
 }
 
+/* 分割线在深色模式下更明显 */
 [data-theme="dark"] .entry-item {
   border-bottom-color: #353555;
 }
@@ -284,7 +286,7 @@ a:hover {
   border-bottom-color: #353555;
 }
 
-/* ========== Theme Toggle Button ========== */
+/* ========== 主题切换按钮 ========== */
 .theme-toggle {
   position: relative;
   width: 36px;
@@ -316,7 +318,7 @@ a:hover {
   transform: rotate(15deg);
 }
 
-/* Dark mode shows sun icon */
+/* 深色模式显示太阳图标 */
 [data-theme="dark"] .theme-toggle i.fa-moon {
   display: none;
 }
@@ -326,7 +328,7 @@ a:hover {
   color: #ffcc00;
 }
 
-/* Light mode shows moon icon */
+/* 亮色模式显示月亮图标 */
 :not([data-theme="dark"]) .theme-toggle i.fa-sun {
   display: none;
 }

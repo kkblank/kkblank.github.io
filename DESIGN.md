@@ -6,18 +6,20 @@
 kkblank.github.io/
 ├── index.html                 # 首页（个人简介/入口）
 ├── pages/
-│   ├── about.html             # 关于我
-│   ├── articles.html          # 文章列表（按需扩展）
-│   ├── notes.html             # 技术笔记（按需扩展）
+│   ├── about.html             # 关于我（教育、经历、项目、技能）
+│   ├── articles.html          # 文章列表（待扩展）
+│   ├── notes.html             # 技术笔记（待扩展）
 │   └── contact.html           # 联系方式
 ├── assets/
 │   ├── css/
-│   │   └── styles.css         # 全局样式 + Pure.css 覆盖 / 自定义
+│   │   └── styles.css         # 全局样式 + Pure.css 覆盖
 │   ├── js/
 │   │   └── components.js      # 导航栏 + 页脚 JS 注入
-│   └── images/                # 图片资源（头像、图标等）
+│   └── images/                # 图片资源
 ├── README.md
-└── DESIGN.md                  # 本文件
+├── AGENTS.md
+├── DESIGN.md                  # 本文件
+└── .gitignore
 ```
 
 ### 目录职责
@@ -37,7 +39,7 @@ kkblank.github.io/
 | **宿主** | GitHub Pages | 静态托管，零服务端 |
 | **标记语言** | HTML5 | 语义化标签（`<header>`、`<nav>`、`<main>`、`<footer>` 等） |
 | **样式** | Pure.css (CDN) + 自定义 CSS | 轻量 4KB 框架 + `styles.css` 覆盖 |
-| **脚本** | 原生 JavaScript | 仅用于组件注入，无框架依赖 |
+| **脚本** | 原生 JavaScript (ES6+) | 仅用于组件注入，无框架依赖 |
 | **图标** | Font Awesome (CDN) | 社交链接、导航图标等 |
 | **字体** | 系统字体栈 | 无需额外加载，性能优先 |
 
@@ -49,7 +51,7 @@ kkblank.github.io/
 
 ### 3.2 components.js 职责
 
-- 定义导航栏数据 `NAV_ITEMS`
+- 定义导航配置 `NAV_ITEMS`（页面标题与路径映射）
 - 根据当前 URL 高亮对应导航项
 - 渲染导航栏 HTML 插入 `#navbar`
 - 渲染页脚 HTML 插入 `#footer`
@@ -86,53 +88,72 @@ kkblank.github.io/
 
 ## 4. 样式体系
 
-### 4.1 Pure.css 使用约定
+### 4.1 CSS 自定义属性
+
+```css
+:root {
+  --primary: #4a6cf7;           /* 主题色 */
+  --primary-dark: #3b5de7;      /* 主题深色 */
+  --bg: #f5f7fa;                /* 背景色 */
+  --card-bg: #ffffff;           /* 卡片背景 */
+  --text: #333333;              /* 主文字色 */
+  --text-light: #666666;        /* 次要文字 */
+  --text-muted: #999999;        /* 弱化文字 */
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 4px 20px rgba(0,0,0,0.12);
+  --radius: 12px;               /* 圆角 */
+  --radius-sm: 8px;             /* 小圆角 */
+  --max-width: 800px;           /* 最大内容宽度 */
+  --nav-height: 60px;           /* 导航栏高度 */
+}
+```
+
+### 4.2 Pure.css 使用约定
 
 | 场景 | Pure.css 类 | 说明 |
 |------|-------------|------|
-| **页面布局** | `.pure-g` / `.pure-u-*` | 响应式网格 |
-| **导航栏** | `.pure-menu` | 水平菜单 |
+| **导航栏** | `.pure-menu` | 水平菜单组件 |
 | **按钮** | `.pure-button` / `.pure-button-primary` | 统一按钮样式 |
 | **表单** | `.pure-form` | 联系表单 |
 | **表格** | `.pure-table` | 文章/笔记列表 |
 
-### 4.2 自定义样式（styles.css）职责
+> 注：页面主体布局主要使用自定义 `.container`，Pure.css 网格组件（`.pure-g`）可根据需要选用。
 
-- 页面整体布局： `.container` 固定宽度 + 居中
-- 卡片样式： `.card` 圆角 + 柔和阴影
-- 色彩主题： CSS 自定义属性定义主色 / 辅色
-- 导航高亮： `.nav-active` 当前页标识
-- 页脚样式： 固定底栏
+### 4.3 自定义样式（styles.css）职责
+
+- 页面整体布局：`.container` 固定宽度 + 居中
+- 卡片样式：`.card` 圆角 + 柔和阴影
+- 色彩主题：CSS 自定义属性定义主色 / 辅色
+- 导航高亮：`.nav-active` 当前页标识
+- 页脚样式：固定底栏
 - 响应式断点补充
 
-### 4.3 卡片式风格
+### 4.4 卡片式风格
 
 ```css
-:root {
-  --primary: #4a6cf7;
-  --bg: #f5f7fa;
-  --card-bg: #ffffff;
-  --shadow: 0 2px 12px rgba(0,0,0,0.08);
-  --radius: 12px;
-}
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 2rem;
   margin-bottom: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-hover);
 }
 ```
 
 ## 5. 页面规划
 
-| 页面 | 优先级 | 内容概要 |
-|------|--------|----------|
-| `index.html` | P0 | 头像 + 一句话简介 + 技能标签 + 最新文章/笔记入口 |
-| `pages/about.html` | P0 | 个人经历 / 教育背景 / 技术栈详细列表 |
-| `pages/contact.html` | P0 | 邮箱 / GitHub / 社交链接 |
-| `pages/articles.html` | P1 | 文章列表卡片（标题 + 摘要 + 日期） |
-| `pages/notes.html` | P1 | 技术笔记列表 |
+| 页面 | 优先级 | 内容概要 | 当前状态 |
+|------|--------|----------|----------|
+| `index.html` | P0 | 头像 + 一句话简介 + 技能标签 + 内容入口 | ✅ 已完成 |
+| `pages/about.html` | P0 | 个人经历 / 教育背景 / 技术栈详细列表 | ✅ 已完成 |
+| `pages/contact.html` | P0 | 邮箱 / GitHub / 社交链接 | ✅ 已完成 |
+| `pages/articles.html` | P1 | 文章列表卡片（标题 + 摘要 + 日期） | ⚠️ 占位 |
+| `pages/notes.html` | P1 | 技术笔记列表 | ⚠️ 占位 |
 
 > P0 = 首版必须，P1 = 首版可选 / 后续补充
 
@@ -203,3 +224,4 @@ python -m http.server 8000
 | **SEO 优化** | 每个页面添加 `<meta name="description">` 和 Open Graph 标签 |
 | **评论功能** | 嵌入 Giscus / Utterances（基于 GitHub Issues） |
 | **访问统计** | 嵌入 Umami / Plausible 等轻量分析工具 |
+| **博客 RSS** | 使用 feed-me 或类似服务生成 RSS |
