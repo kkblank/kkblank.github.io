@@ -123,6 +123,75 @@
       .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
       .project-card { margin-bottom: 0; }
     }
+
+    /* ============ 社交 CTA 按钮（Hero） ============ */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.25rem;
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .cta-btn i { color: var(--primary); transition: color 0.2s ease; }
+    .cta-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+    }
+    .cta-btn:hover i { color: #ffffff; }
+
+    /* ============ GitHub 数据卡片 ============ */
+    .github-section { margin-top: 2rem; }
+    .github-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .github-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      padding: 1rem 0.5rem;
+      text-align: center;
+    }
+    .github-stat > i { font-size: 1.3rem; color: var(--primary); }
+    .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); }
+    .github-activity {
+      border-top: 1px solid var(--bg);
+      padding-top: 1rem;
+    }
+    .activity-title { font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+    .activity-list { list-style: none; }
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .activity-item > i { width: 1.2rem; text-align: center; color: var(--primary); flex-shrink: 0; }
+    .activity-text { flex: 1; overflow-wrap: anywhere; }
+    .activity-time { flex-shrink: 0; font-size: 0.8rem; color: var(--text-muted); }
+    [data-theme="dark"] .github-activity { border-top-color: #353555; }
+
   </style>
 </head>
 <body>
@@ -139,6 +208,47 @@
         <span class="tag">AI图像识别</span>
         <span class="tag">NLP</span>
         <span class="tag">CV工程师</span>
+      </div>
+
+      <div class="hero-cta">
+        <a class="cta-btn" href="https://github.com/kkblank" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a class="cta-btn" href="mailto:kkblank@example.com">
+          <i class="fa-solid fa-envelope"></i> 邮箱
+        </a>
+        <a class="cta-btn" href="https://space.bilibili.com/2805045" target="_blank" rel="noopener">
+          <i class="fa-brands fa-bilibili"></i> B站
+        </a>
+      </div>
+    </section>
+
+    <section class="github-section" id="github-section">
+      <h2 class="section-title">
+        <i class="fa-brands fa-github"></i> GitHub动态
+      </h2>
+      <div class="card">
+        <div class="github-stats">
+          <div class="github-stat">
+            <i class="fa-solid fa-folder-open"></i>
+            <span class="stat-value" id="stat-repos">--</span>
+            <span class="stat-label">公开仓库</span>
+          </div>
+          <div class="github-stat">
+            <i class="fa-solid fa-star"></i>
+            <span class="stat-value" id="stat-stars">--</span>
+            <span class="stat-label">累计 Stars</span>
+          </div>
+          <div class="github-stat">
+            <i class="fa-solid fa-user-friends"></i>
+            <span class="stat-value" id="stat-followers">--</span>
+            <span class="stat-label">粉丝</span>
+          </div>
+        </div>
+        <div class="github-activity">
+          <h3 class="activity-title">最近动态</h3>
+          <ul class="activity-list" id="activity-list"></ul>
+        </div>
       </div>
     </section>
 
@@ -256,5 +366,6 @@
   </main>
   <div id="footer"></div>
   <script src="/assets/js/components.js"></script>
+  <script src="/assets/js/homepage.js"></script>
 </body>
 </html>
