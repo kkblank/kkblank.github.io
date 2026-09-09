@@ -50,6 +50,12 @@
         </div>
 
         <div style="margin-bottom:1rem;">
+          <p style="font-weight:500;">大模型自进化调优策略研发</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">针对输电巡检误报过滤场景，设计多模态大模型自进化调优框架：以「指标评测 → badcase 错误归因 → 调优调整」为闭环，自动执行提示词优化、推理参数调节、LoRA 轻量微调等全方位调优，解决大模型提示词无刻度、无法显式控制精度/召回的问题。</p>
+          <p style="color:var(--text-light); font-size:0.9rem;">成果：在 4889 样本真实测试集上全自动迭代 7 轮，综合得分 88.67 → 91.71，召回率 85.5% → 91.6%，产出可复用的高召回/高精度策略配置。</p>
+        </div>
+
+        <div style="margin-bottom:1rem;">
           <p style="font-weight:500;">无人机巡检缺陷识别项目</p>
           <p style="color:var(--text-light); font-size:0.9rem;">使用基于 mmdet、grounding-dino 等框架对目标进行两阶段检测，一阶段检测大目标缺陷类型及定位小目标缺陷载体，二阶段检测小目标具体缺陷类型。</p>
           <p style="color:var(--text-light); font-size:0.9rem;">成果：负责小金具与接地装置缺陷类型检测，使用 cascade-rcnn 基础模型架构结合 swint 骨干网络，训练多预测头检测模型，在缺陷测试集上达成精度召回均大于 75% 的识别性能。公开一篇发明专利（第一作者）。</p>
